@@ -7,7 +7,7 @@ long long factorial(int n) {
         return 0;
     }
 
-    long long result = 1;   // long long — велике число
+    long long result = 1;
     for (int i = 1; i <= n; i++) {
         result *= i;
     }

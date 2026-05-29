@@ -34,5 +34,6 @@ low: low.c libconvert.so
     # Linked low application
 	gcc low.c -L. -lconvert -o low
 
+# clean all genereted files
 clean:
 	rm -f *.o *.a *.so calc_app upper low convert/convert.o

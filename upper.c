@@ -2,7 +2,7 @@
 #include "convert/convert.h"
 
 int main() {
-    char text[256];     // масив символів
+    char text[256];
 
     printf("Enter text: ");
     fgets(text, 256, stdin);
