@@ -6,6 +6,6 @@ double sub(double a, double b);
 double mul(double a, double b);
 double divide(double a, double b);
 long long factorial(int n);
-double sqrt(double x);
+double sqrt_local(double x);
 
 #endif

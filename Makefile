@@ -4,7 +4,7 @@ all: calc_app upper low
 # Static library block
 libcalc.a: calc/add.c calc/sub.c calc/mul.c calc/div.c calc/fact.c calc/sqrt.c
     # Compile all .c files in the calc/ folder to .o files
-	gcc -c calc/*.c
+	gcc -Wall -Werror -Wextra -c calc/*.c
 
     # Build static lib from .o files
 	ar rcs libcalc.a *.o
@@ -13,9 +13,9 @@ libcalc.a: calc/add.c calc/sub.c calc/mul.c calc/div.c calc/fact.c calc/sqrt.c
 	rm *.o
 
 # Calculate application block
-calc_app: main.c libcalc.a
+calc_app: main.c libcalc.a calc/calc.h
     # Linked main.c with libcalc.a (-lcalc) lib and math lib (-lm)
-	gcc main.c -L. -lcalc -lm -o calc_app
+	gcc main.c -I. -L. -lcalc -lm -o calc_app
 
 # Shared library block
 libconvert.so: convert/convert.o

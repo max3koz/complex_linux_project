@@ -2,7 +2,7 @@
 #include <math.h>
 #include "calc.h"
 
-double root(double x) {
+double sqrt_local(double x) {
     if (x < 0) {
         printf("Error: negative number for sqrt\n");
         return 0;
