@@ -2,21 +2,29 @@
 #include "calc/calc.h"
 
 // Function to read double type number
-int read_double(double *value) {
-    if (scanf("%lf", value) != 1) {
-        printf("Error: expected a number!\n");
-        return 0;
+double read_double(double *value) {
+    while (1) {
+        if (scanf("%lf", value) == 1) {
+            return 1;
+        }
+        printf("Error: expected integer! Enter next number:");
+
+        int c;
+        while ((c = getchar()) != '\n' && c != EOF);
     }
-    return 1;
 }
 
 // Function to read int type number
 int read_int(int *value) {
-    if (scanf("%d", value) != 1) {
-        printf("Error: expected an integer!\n");
-        return 0;
+    while (1) {
+        if (scanf("%d", value) == 1) {
+            return 1;
+        }
+        printf("Error: expected integer! Enter next number:");
+
+        int c;
+        while ((c = getchar()) != '\n' && c != EOF);
     }
-    return 1;
 }
 
 int main() {
@@ -72,7 +80,7 @@ int main() {
             case 6:
                 printf("Enter number: ");
                 if (!read_double(&a)) break;
-                printf("Result: %.2lf\n", sqrt(a));
+                printf("Result: %.2lf\n", sqrt_local(a));
                 break;
 
             case 0:
